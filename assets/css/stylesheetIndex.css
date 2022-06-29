@@ -1,0 +1,850 @@
+/* global */
+body{
+    margin: 0px;
+    background-image: linear-gradient(to right, rgb(80, 160, 60),rgb(58, 48, 94));
+    color: white;
+    position: relative;
+}
+/* For studio header on top*/
+
+#studio-header{
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(100, 100, 100);
+}
+#left-header{
+    display: flex;
+    height: 100%;
+}
+#studio-image{
+    background-image: url(../images/logo.png);
+    background-size: 100% 100%;
+    height: 100%;
+    width: 70px;
+    min-width: 70px;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+#studio-image:hover{
+    opacity: 0.7;
+}
+#studio-name{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    font-size: 1.2rem;
+    height: 70px;
+    margin-left: 10px;
+}
+#studio-name p{
+    margin: 0px;
+}
+.make-bold{
+    font-weight: bold;
+}
+#favourites{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+}
+#favourites a{
+    color: white;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+#favourites a:hover{
+    color: rgb(54, 51, 51);
+    border-bottom: 1px solid rgb(66, 63, 63);
+}
+#right-header{
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+}
+.search-container{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    height: 100%;
+}
+.search-bar{
+    position: relative;
+}
+.search{
+    width: 300px;
+    border: none;
+    background-color: rgb(135, 173, 196);
+    color: black;
+    border-radius: 50px;
+    padding: 5px 0px 5px 30px;
+    transition: all 0.5s;
+}
+.search:hover{
+    background-image: linear-gradient(to right, rgb(57, 160, 192), rgb(68, 43, 100));
+}
+.search::placeholder{
+    color: white;
+}
+.place-search{
+    position: absolute;
+    z-index: 1;
+    left: 10px;
+    top: 5px;
+    transition: all 0.5s;
+}
+.place-search:hover{
+    color: black;
+}
+.place-microphone{
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+    right: 10px;
+    transition: all 0.5s;
+}
+.place-microphone:hover{
+    color: black;
+}
+.notification{
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    height: 100%;
+    transition: all 0.5s;
+}
+.notification:hover{
+    color: black;
+}
+.profile-image{
+    background-image: url(../images/profile-pic.jpg);
+    background-size: 100% 100%;
+    height: 100%;
+    width: 70px;
+    min-width: 70px;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+.profile-image:hover{
+    opacity: 0.7;
+}
+#profile-menu, #context-menu{
+    display: none;
+}
+
+#studio-main{
+    height: 90vh;
+    display: flex;
+    position: relative;
+}
+#studio-content{
+    height: 100%;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+#studio-content>div{
+    margin: 10px;
+}
+/* Styling carousel */
+#carousel{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+#carousel>div{
+    margin: 10px 10px;
+    box-shadow: 0px 0px 50px rgb(0, 0, 0);
+    transition: all 0.5s;
+}
+#carousel>div:hover{
+    transform: scale(1.1);
+    opacity: 0.7;
+}
+#carousel>div:hover:nth-child(2n+1){
+    transform: rotate(4deg);
+}
+#carousel>div:hover:nth-child(2n){
+    transform: rotate(-4deg);
+}
+.edm{
+    width: 250px;
+    height: 250px;
+    background-image: url(../images/edm.jpg);
+    background-size: 100% 100%;
+    min-width: 250px;
+    min-height: 250px;
+}
+.hip-hop{
+    width: 250px;
+    height: 250px;
+    background-image: url(../images/hiphop.jpg);
+    background-size: 100% 100%;
+    min-width: 250px;
+    min-height: 250px;
+}
+.ncs{
+    width: 250px;
+    height: 250px;
+    background-image: url(../images/ncs.jpg);
+    background-size: 100% 100%;
+    min-width: 250px;
+    min-height: 250px;
+}
+.trap{
+    width: 250px;
+    height: 250px;
+    background-image: url(../images/trap.jpg);
+    background-size: 100% 100%;
+    min-width: 250px;
+    min-height: 250px;
+}
+
+/* latest release items*/
+#latest-release a{
+    color: white;
+    text-decoration: none;
+}
+.latest-release-heading{
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.latest-release-items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.release{
+    height: 70px;
+    width: 370px;
+    min-height: 70px;
+    min-width: 370px;
+    display: flex;
+    margin: 10px 10px;
+    position: relative;
+}
+.release-img{
+    height: 100%;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 70px;
+    font-size: 0;
+}
+.release-img:hover{
+    font-size: 2rem;
+    opacity: 0.7;
+}
+.r-1{
+    background-image: url(../images/luna.png);
+    background-size: 100% 100%;
+}
+.r-2{
+    background-image: url(../images/electronomia.jpg);
+    background-size: 100% 100%;
+}
+.r-3{
+    background-image: url(../images/lexica.jpg);
+    background-size: 100% 100%;
+}
+.r-4{
+    background-image: url(../images/koven.jpg);
+    background-size: 100% 100%;
+}
+.release-info{
+    height: 100%;
+    width: 300px;
+    display: flex;
+}
+.info{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 10px;
+}
+.info-title{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.release-menu{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+.release-menu>a{
+    color: white;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+.release-menu>a:hover{
+    color: black;
+}
+.duration{
+    font-size: 0.9rem;
+}
+#release-drop-down-1{
+    display: none;
+    color: black;
+    background-color: rgb(155, 155, 155);
+}
+#release-drop-down-1>div{
+    text-align: right;
+}
+#release-drop-down-1>a{
+    color: black;
+    text-decoration: none;
+}
+#release-drop-down-1>ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+#release-drop-down-1>ul>li{
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+#release-drop-down-1>ul>li:last-child{
+    border: 0px;
+}
+#release-drop-down-1>ul>li:hover{
+    background-color: rgb(223, 223, 223);
+}
+
+#release-drop-down-1:target{
+    width: 150px;
+    display: block;
+    position: absolute;
+    top: 9px;
+    right: 0px;
+    z-index: 1;
+}
+#release-drop-down-2{
+    display: none;
+    color: black;
+    background-color: rgb(155, 155, 155);
+}
+#release-drop-down-2>div{
+    text-align: right;
+}
+#release-drop-down-2>a{
+    color: black;
+    text-decoration: none;
+}
+#release-drop-down-2>ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+#release-drop-down-2>ul>li{
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+#release-drop-down-2>ul>li:last-child{
+    border: 0px;
+}
+#release-drop-down-2>ul>li:hover{
+    background-color: rgb(223, 223, 223);
+}
+
+#release-drop-down-2:target{
+    width: 150px;
+    display: block;
+    position: absolute;
+    top: 9px;
+    right: 0px;
+    z-index: 1;
+}
+#release-drop-down-3{
+    display: none;
+    color: black;
+    background-color: rgb(155, 155, 155);
+}
+#release-drop-down-3>div{
+    text-align: right;
+}
+#release-drop-down-3>a{
+    color: black;
+    text-decoration: none;
+}
+#release-drop-down-3>ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+#release-drop-down-3>ul>li{
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+#release-drop-down-3>ul>li:last-child{
+    border: 0px;
+}
+#release-drop-down-3>ul>li:hover{
+    background-color: rgb(223, 223, 223);
+}
+
+#release-drop-down-3:target{
+    width: 150px;
+    display: block;
+    position: absolute;
+    top: 9px;
+    right: 0px;
+    z-index: 1;
+}
+#release-drop-down-4{
+    display: none;
+    color: black;
+    background-color: rgb(155, 155, 155);
+}
+#release-drop-down-4>div{
+    text-align: right;
+}
+#release-drop-down-4>a{
+    color: black;
+    text-decoration: none;
+}
+#release-drop-down-4>ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+#release-drop-down-4>ul>li{
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+#release-drop-down-4>ul>li:last-child{
+    border: 0px;
+}
+#release-drop-down-4>ul>li:hover{
+    background-color: rgb(223, 223, 223);
+}
+
+#release-drop-down-4:target{
+    width: 150px;
+    display: block;
+    position: absolute;
+    top: 9px;
+    right: 0px;
+    z-index: 1;
+}
+
+/* artists*/
+.artists-heading{
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.artists{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.artists>div{
+    height: 200px;
+    width: 200px;
+    min-height: 200px;
+    min-width: 200px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.artist-img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 40px black;
+    transition: all 0.5s;
+}
+.artist-img:hover{
+    opacity: 0.7;
+    transform: scale(1.2);
+}
+.ed-sheeran{
+    background-image: url(../images/ed-sheeran.jpg);
+    background-size: 100% 100%;
+}
+.taylor-swift{
+    background-image: url(../images/taylor-swift.jpg);
+    background-size: 100% 100%;
+}
+.charlie-puth{
+    background-image: url(../images/charlie-puth.jpg);
+    background-size: 100% 100%;
+}
+.eminem{
+    background-image: url(../images/eminem.jpg);
+    background-size: 100% 100%;
+}
+.rihanna{
+    background-image: url(../images/rihanna.jpg);
+    background-size: 100% 100%;
+}
+.weeknd{
+    background-image: url(../images/weeknd.jpg);
+    background-size: 100% 100%;
+}
+
+/*browse*/
+.browse-heading{
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.browse-items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.browse-items>div{
+    width: 150px;
+    height: 120px;
+    min-width: 150px;
+    min-height: 120px;
+    margin: 10px;
+    overflow: hidden;
+}
+.browse-items>div>div{
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+.browse-items>div>div:hover{
+    transform: scale(1.1);
+    opacity: 0.7;
+}
+.love{
+    background-image: url(../images/love.jpg);
+    background-size: 100% 100%;
+}
+.retro{
+    background-image: url(../images/retro.jpg);
+    background-size: 100% 100%;
+}
+.chill{
+    background-image: url(../images/chill.jpg);
+    background-size: 100% 100%;
+}
+.workout{
+    background-image: url(../images/workout.jpg);
+    background-size: 100% 100%;
+}
+.rock{
+    background-image: url(../images/rock.jpg);
+    background-size: 100% 100%;
+}
+.pop{
+    background-image: url(../images/pop.jpg);
+    background-size: 100% 100%;
+}
+.party{
+    background-image: url(../images/party.jpg);
+    background-size: 100% 100%;
+}
+.electronic{
+    background-image: url(../images/electronic.jpg);
+    background-size: 100% 100%;
+}
+.road-trip{
+    background-image: url(../images/road-trip.jpg);
+    background-size: 100% 100%;
+}
+
+/* latest english*/
+#latest-english a, #latest-hindi a{
+    color: white;
+    text-decoration: none;
+}
+
+/* side queue*/
+#queue{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    scrollbar-width: none;
+    position: relative;
+}
+#studio-content::-webkit-scrollbar{
+    display: none;
+}
+#studio-content{
+    scrollbar-width: none;
+}
+#queue::-webkit-scrollbar{
+    display: none;
+}
+#queue a{
+    color: white;
+    text-decoration: none;
+}
+.queue-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    background-color: rgb(75, 75, 75);
+}
+.queue-heading{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.queue-menu{
+    position: relative;
+}
+.queue-menu a{
+    color: white;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+.queue-menu a:hover{
+    color: black;
+}
+#queue-drop-down{
+    display: none;
+    width: 110px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: rgb(128, 128, 128);
+    z-index: 1;
+}
+#queue-drop-down>ul{
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+#queue-drop-down>ul>li{
+    padding: 5px;
+}
+#queue-drop-down>ul>li:hover{
+    background-color: rgb(68, 68, 68);
+}
+#queue-drop-down>ul>li:first-child{
+    border-bottom: 1px solid black;
+}
+#queue-drop-down:target{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.queue-items{
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+.queue-items>li{
+    height: 50px;
+    min-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    z-index: 1;
+}
+.left-li{
+    display: flex;
+}
+.right-li{
+    display: flex;
+    align-items: center;
+}
+.q-img{
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    font-size: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.q-img:hover{
+    font-size: 1rem;
+    opacity: 0.7;
+}
+.q-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 10px;
+}
+.q-info>div:first-child{
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.like:hover{
+    color: red;
+}
+.q-1, .q-2, .q-3, .q-4, .q-5{
+    background-image: url(../images/lexica.jpg);
+    background-size: 100% 100%;
+}
+.q-6, .q-7, .q-8, .q-9, .q-10{
+    background-image: url(../images/ncs.jpg);
+    background-size: 100% 100%;
+}
+
+/*bottom music player controls*/
+#studio-controls{
+    height: 75px;
+    width: 100vw;
+    min-height: 75px;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    display: none;
+    background-color: rgb(70, 70, 70);
+    z-index: 1;
+    opacity: 0.7;
+}
+#studio-controls a{
+    color: white;
+    text-decoration: none;
+}
+#studio-controls a:hover{
+    color: rgb(177, 40, 40);
+}
+#studio-controls:target{
+    display: flex;
+    justify-content: space-between;
+}
+#studio-controls:hover{
+    background-color: rgb(31, 31, 31);
+    opacity: 1;
+}
+#studio-controls>.left{
+    height: 100%;
+    display: flex;
+
+}
+#studio-controls>.left>.left-img{
+    height: 75px;
+    width: 75px;
+    min-width: 75px;
+    background-image: url(../images/lexica.jpg);
+    background-size: 100% 100%;
+}
+#studio-controls>.left>.left-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 10px;
+}
+#studio-controls>.left>.left-info>div:first-child{
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+#studio-controls>.left>.left-like{
+    display: block;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#studio-controls>.left>.left-like>i:hover{
+    color: red;
+}
+#studio-controls>.middle{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#studio-controls>.middle>.row-1{
+    display: flex;
+    align-items: center;
+}
+#studio-controls>.middle>.row-1>i{
+    margin: 0px 10px;
+}
+#studio-controls>.middle>.row-1>i:nth-child(3){
+    font-size: 1.5rem;
+}
+#studio-controls>.middle>.row-1>i:hover{
+    color: black;
+}
+#studio-controls>.middle>.row-2{
+    display: flex;
+    align-items: center;
+}
+#studio-controls>.middle>.row-2>input{
+    width: 200px;
+    min-width: 200px;
+}
+#studio-controls>.right{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+#studio-controls>.right>i{
+    margin: 0px 10px;
+}
+#studio-controls>.right>i:hover{
+    color: black;
+}
+
+/*media queries*/
+@media (max-width: 900px){
+    #favourites{
+        margin-left: 10px;
+    }
+    #right-header{
+        display: none;
+    }
+    #profile-menu{
+        display: flex;
+        height: 100%;
+    }
+    #context-menu:target{
+        background-color: grey;
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        z-index: 1;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        height: 70px;
+        min-height: 70px;
+    }
+    .search{
+        width: 150px;
+    }
+    #studio-main{
+        flex-direction: column;
+        align-items: center;
+    }
+    #studio-content{
+        width: 99%;
+        height: 70%;
+    }
+    #queue{
+        width: 99%;
+        height: 30%;
+    }
+}
+@media (max-height: 720px){
+    #studio-main{
+        height: 85vh;
+    }
+}
+@media (max-height: 480px){
+    #studio-main{
+        height: 80vh;
+    }
+}

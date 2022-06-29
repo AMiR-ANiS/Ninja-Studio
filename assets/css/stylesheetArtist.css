@@ -1,0 +1,516 @@
+/* global styling*/
+body{
+    margin: 0px;
+    background-image: linear-gradient(to right, rgb(80, 160, 60),rgb(58, 48, 94));
+    color: white;
+    position: relative;
+}
+
+/* studio header*/
+#studio-header{
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(100, 100, 100);
+}
+#left-header{
+    display: flex;
+    height: 100%;
+}
+#studio-image{
+    background-image: url(../images/logo.png);
+    background-size: 100% 100%;
+    height: 100%;
+    width: 70px;
+    min-width: 70px;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+#studio-image:hover{
+    opacity: 0.7;
+}
+#studio-name{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    font-size: 1.2rem;
+    height: 70px;
+    margin-left: 10px;
+}
+#studio-name p{
+    margin: 0px;
+}
+.make-bold{
+    font-weight: bold;
+}
+#favourites{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+}
+#favourites a{
+    color: white;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+#favourites a:hover{
+    color: rgb(54, 51, 51);
+    border-bottom: 1px solid rgb(66, 63, 63);
+}
+#right-header{
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+}
+.search-container{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    height: 100%;
+}
+.search-bar{
+    position: relative;
+}
+.search{
+    width: 300px;
+    border: none;
+    background-color: rgb(135, 173, 196);
+    color: black;
+    border-radius: 50px;
+    padding: 5px 0px 5px 30px;
+    transition: all 0.5s;
+}
+.search:hover{
+    background-image: linear-gradient(to right, rgb(57, 160, 192), rgb(68, 43, 100));
+}
+.search::placeholder{
+    color: white;
+}
+.place-search{
+    position: absolute;
+    z-index: 1;
+    left: 10px;
+    top: 5px;
+    transition: all 0.5s;
+}
+.place-search:hover{
+    color: black;
+}
+.place-microphone{
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+    right: 10px;
+    transition: all 0.5s;
+}
+.place-microphone:hover{
+    color: black;
+}
+.notification{
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    height: 100%;
+    transition: all 0.5s;
+}
+.notification:hover{
+    color: black;
+}
+.profile-image{
+    background-image: url(../images/profile-pic.jpg);
+    background-size: 100% 100%;
+    height: 100%;
+    width: 70px;
+    min-width: 70px;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+.profile-image:hover{
+    opacity: 0.7;
+}
+#profile-menu, #context-menu{
+    display: none;
+}
+
+#studio-main{
+    height: 90vh;
+    display: flex;
+    position: relative;
+}
+#studio-content{
+    height: 100%;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+#studio-content>div{
+    margin: 10px;
+}
+
+/* styling artist info*/
+.artist-info{
+    height: 400px;
+    min-height: 400px;
+    display: flex;
+}
+.artist-info>.artist-img{
+    height: 400px;
+    width: 400px;
+    min-width: 400px;
+    background-image: url(../images/charlie-puth.jpg);
+    background-size: 100% 100%;
+}
+.artist-info>.artist-img:hover{
+    opacity: 0.7;
+}
+.artist-info>.description{
+    flex-grow: 1;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.artist-info>.description>.row-1{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.artist-info>.description>.row-1>.artist-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.artist-info>.description>.row-1>.artist-name>div:first-child{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.artist-info>.description>.row-1>.follower-count{
+    display: flex;
+    align-items: center;
+}
+.artist-info>.description>.row-2{
+    flex-grow: 1;
+    max-height: 250px;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.artist-info>.description>.row-2::-webkit-scrollbar{
+    display: none;
+}
+.artist-info>.description>.row-2>p{
+    text-align: justify;
+    margin: 0px;
+    padding: 0px;
+}
+.artist-info>.description>.row-3{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+.artist-info>.description>.row-3>.play-all{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.artist-info>.description>.row-3>.play-all>div:first-child{
+    padding: 10px 20px;
+    font-size: 1.3rem;
+    background-image: linear-gradient(to right, rgb(68, 61, 134), rgb(124, 42, 124));
+    box-shadow: 0px 0px 30px black;
+    margin-bottom: 10px;
+}
+.artist-info>.description>.row-3>.play-all>div:first-child:hover{
+    opacity: 0.7;
+}
+.artist-info>.description>.row-3>.follow{
+    font-size: 1.3rem;
+    padding: 10px 20px;
+    background-image: linear-gradient(to right, rgb(68, 61, 134), rgb(124, 42, 124));
+    box-shadow: 0px 0px 30px black;
+}
+.artist-info>.description>.row-3>.follow:hover{
+    opacity: 0.7;
+}
+#aside{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+#aside>div{
+    height: 50%;
+    max-height: 50%;
+    display: flex;
+    flex-direction: column;
+    scrollbar-width: none;
+    overflow: scroll;
+}
+#aside>div::-webkit-scrollbar{
+    display: none;
+}
+#studio-content::-webkit-scrollbar{
+    display: none;
+}
+#studio-content{
+    scrollbar-width: none;
+}
+#aside::-webkit-scrollbar{
+    display: none;
+}
+#aside a{
+    color: white;
+    text-decoration: none;
+}
+.queue-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.queue-heading{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.similar-artists>ol{
+    list-style-type: none;
+}
+.similar-artists .li-container{
+    background-color: rgba(0, 0, 0, 0);
+}
+.linkin-park{
+    background-image: url(../images/linkin-park.png);
+    background-size: 100% 100%;
+}
+
+.queue-items{
+    margin: 0px;
+    list-style-type: decimal-leading-zero;
+}
+.li-container{
+    height: 50px;
+    min-height: 50px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(53, 53, 53, 0.329);
+}
+.left-li{
+    display: flex;
+}
+.right-li{
+    display: flex;
+    align-items: center;
+}
+.q-img{
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    font-size: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.q-img:hover{
+    font-size: 1rem;
+    opacity: 0.7;
+}
+.q-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 10px;
+}
+.q-info>div:first-child{
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.like:hover{
+    color: red;
+}
+.plus{
+    margin: 0px 10px;
+}
+.plus:hover{
+    color: black;
+}
+.q-1, .q-2, .q-3, .q-4, .q-5{
+    background-image: url(../images/lexica.jpg);
+    background-size: 100% 100%;
+}
+.q-6, .q-7, .q-8, .q-9, .q-10{
+    background-image: url(../images/ncs.jpg);
+    background-size: 100% 100%;
+}
+.queue-items a{
+    color: white;
+    text-decoration: none;
+}
+
+/*bottom music player controls*/
+#studio-controls{
+    height: 75px;
+    width: 100vw;
+    min-height: 75px;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    display: none;
+    background-color: rgb(70, 70, 70);
+    z-index: 1;
+    opacity: 0.7;
+}
+#studio-controls a{
+    color: white;
+    text-decoration: none;
+}
+#studio-controls a:hover{
+    color: rgb(177, 40, 40);
+}
+#studio-controls:target{
+    display: flex;
+    justify-content: space-between;
+}
+#studio-controls:hover{
+    background-color: rgb(31, 31, 31);
+    opacity: 1;
+}
+#studio-controls>.left{
+    height: 100%;
+    display: flex;
+
+}
+#studio-controls>.left>.left-img{
+    height: 75px;
+    width: 75px;
+    min-width: 75px;
+    background-image: url(../images/lexica.jpg);
+    background-size: 100% 100%;
+}
+#studio-controls>.left>.left-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 10px;
+}
+#studio-controls>.left>.left-info>div:first-child{
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+#studio-controls>.left>.left-like{
+    display: block;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#studio-controls>.left>.left-like>i:hover{
+    color: red;
+}
+#studio-controls>.middle{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#studio-controls>.middle>.row-1{
+    display: flex;
+    align-items: center;
+}
+#studio-controls>.middle>.row-1>i{
+    margin: 0px 10px;
+}
+#studio-controls>.middle>.row-1>i:nth-child(3){
+    font-size: 1.5rem;
+}
+#studio-controls>.middle>.row-1>i:hover{
+    color: black;
+}
+#studio-controls>.middle>.row-2{
+    display: flex;
+    align-items: center;
+}
+#studio-controls>.middle>.row-2>input{
+    width: 200px;
+    min-width: 200px;
+}
+#studio-controls>.right{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+#studio-controls>.right>i{
+    margin: 0px 10px;
+}
+#studio-controls>.right>i:hover{
+    color: black;
+}
+
+/*media queries*/
+@media (max-width: 900px){
+    #favourites{
+        margin-left: 10px;
+    }
+    #right-header{
+        display: none;
+    }
+    #profile-menu{
+        display: flex;
+        height: 100%;
+    }
+    #context-menu:target{
+        background-color: grey;
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        z-index: 1;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        height: 70px;
+        min-height: 70px;
+    }
+    .search{
+        width: 150px;
+    }
+    #studio-main{
+        flex-direction: column;
+        align-items: center;
+    }
+    #studio-content{
+        width: 99%;
+        height: 50%;
+    }
+    #aside{
+        width: 99%;
+        height: 50%;
+    }
+    .artist-info>.artist-img{
+        width: 200px;
+        height: 200px;
+        min-width: 200px;
+    }
+    .artist-info>.description>.row-3>.play-all>div:first-child{
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        background-image: linear-gradient(to right, rgb(68, 61, 134), rgb(124, 42, 124));
+        box-shadow: 0px 0px 30px black;
+        margin-bottom: 10px;
+    }
+    .artist-info>.description>.row-3>.follow{
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        background-image: linear-gradient(to right, rgb(68, 61, 134), rgb(124, 42, 124));
+        box-shadow: 0px 0px 30px black;
+    }
+}
+@media (max-height: 720px){
+    #studio-main{
+        height: 85vh;
+    }
+}
+@media (max-height: 480px){
+    #studio-main{
+        height: 80vh;
+    }
+}

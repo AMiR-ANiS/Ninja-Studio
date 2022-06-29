@@ -1,2 +1,2 @@
 # Ninja-Studio
-A frontend music player app
+A frontend music player app using html and css
